@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <style>
+        .bt{
+            color: black; font-weight: 900;
+        }
+        .title{
+            font-weight: bold; font-size: large;
+            color: black;
+        }
+        .text{
+            color: black;
+        }
+    </style>
+    <style type="text/css">
+    a {text-decoration: none!important;}
+    </style>
+</head>
+<body>
+    <div class="contatiner-fluid">
+        <div class="row mt-3 mb-5">
+            <div class="col text-center m-3 font-weight-bold h3">
+                Blog
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row border-bottom pb-4">
+            <div class="col">
+                <a href="/"><button type="button" class="btn btn-link bt"><i class="fas fa-bars mr-2"></i>전체 게시글</button></a>
+                <!-- 순서2 -->
+                <!-- 버튼을 누르면 /register/인 url로 이동 -->
+                <a href="/register"><button type="button" class="btn btn-link bt"><i class="fas fa-edit mr-2"></i>게시글 작성</button></a>
+            </div>
+        </div>
+        <!-- Board에 있는 모든 게시물을 가져와서 보여줌 -->
+        {% for board in boards.all%}
+        <a href="/{{board.id}}">
+        <div class="card border-right-0 border-left-0 border-top-0">
+            <p class="title mt-5">{{board.subject}}</p>
+            <p class="text mb-5">{{board.memo}}</p>
+        </div>    
+        </a>   
+        {% endfor %}
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <style>
+        .bt{
+            color: black; font-weight: 900;
+        }
+        .footer{
+            position:fixed;
+            bottom: 0;
+        }
+        .title{
+            font-weight: bold; font-size: large;
+            color: black;
+        }
+        .text{
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <div class="contatiner-fluid">
+        <div class="row mt-3 mb-5">
+            <div class="col text-center m-3 font-weight-bold h3">
+                Blog
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <!-- 순서5번 -->
+        <!-- 폼안에 내용을 입력하고 submit버튼을 누름 -->
+        <!-- Get방식으로 name이 있는 데이터를 가지고 
+            기존의 register/ url에서 action의 board가 붙은 register/board/ url로 이동함 -->
+        <form action="board" method="GET">
+            <div class="row">
+                <div class="container mb-3">
+                    <div class="row">
+                        <select class="form-control form-control-sm col-2" name='language'>
+                            <option value="1">Django</option>
+                            <option value="2">Python</option>
+                            <option value="3">html/css</option>
+                            <option value="4">Js/Jquery</option>
+                        </select>
+                    </div>
+                </div>            
+            </div>
+            <div class="row border-bottom">
+                <input type="text" class="contatiner-fluid border-0 m-3 w-100 title" name="subject">            
+            </div>
+            <div class="row mt-3">
+                <textarea class="container-fluid border-0 text"name="memo" id="new_memo" cols="100" rows="50"></textarea>
+            </div>
+    </div>
+    <div class="container-fluid footer bg-light d-flex justify-content-center" >
+        <input type="submit" class="btn btn-dark rounded-pill pr-4 pl-4 mt-3 mb-3" value="완료"> 
+        </form>
+    </div>
+</body>
+</html>
